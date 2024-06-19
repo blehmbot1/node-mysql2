@@ -1,5 +1,70 @@
 # Changelog
 
+## [3.11.0](https://github.com/blehmbot1/node-mysql2/compare/v3.10.1...v3.11.0) (2024-06-19)
+
+
+### Features
+
+* add conn-level `infileStreamFactory` option ([#2159](https://github.com/blehmbot1/node-mysql2/issues/2159)) ([5bed0f8](https://github.com/blehmbot1/node-mysql2/commit/5bed0f8f195f615844d5dbe322ebfe47b76ba2f5))
+* add jsonStrings option ([#2642](https://github.com/blehmbot1/node-mysql2/issues/2642)) ([9820fe5](https://github.com/blehmbot1/node-mysql2/commit/9820fe51b48cadd48024956e62d9fceac2e5a880))
+* **docs:** release documentation website ([#2339](https://github.com/blehmbot1/node-mysql2/issues/2339)) ([c0d77c0](https://github.com/blehmbot1/node-mysql2/commit/c0d77c02d2f4ad22b46a712d270fc2654d26de4e))
+* improved inspection of columns ([#2112](https://github.com/blehmbot1/node-mysql2/issues/2112)) ([69277aa](https://github.com/blehmbot1/node-mysql2/commit/69277aa0430d951d61c485d2cd228c3cd9d4a33c))
+* introduce typeCast for `execute` method ([#2398](https://github.com/blehmbot1/node-mysql2/issues/2398)) ([baaa92a](https://github.com/blehmbot1/node-mysql2/commit/baaa92a228d32012f7da07826674f7a736e3791d))
+* **perf:** cache iconv decoder ([#2391](https://github.com/blehmbot1/node-mysql2/issues/2391)) ([b95b3db](https://github.com/blehmbot1/node-mysql2/commit/b95b3dbe4bb34e36d0d1be6948e4d8a169d28eed))
+* support STATE_GTIDS session track information ([2b1520f](https://github.com/blehmbot1/node-mysql2/commit/2b1520f4c5c11cda30d69e8b8b20ff03ec469099))
+
+
+### Bug Fixes
+
+* `createPool` uri overload ([98623dd](https://github.com/blehmbot1/node-mysql2/commit/98623dd7fc82cfbe556fc4b92828d382b86625d8))
+* `PoolCluster` typings ([3902ca6](https://github.com/blehmbot1/node-mysql2/commit/3902ca6534fd64a798c5b2dc29402fe396d4a67c))
+* add `ProcedureCallPacket` to `execute` overloads ([3566ef7](https://github.com/blehmbot1/node-mysql2/commit/3566ef77a1a45d2cb18b1e32e0a5f4fc325a26cd))
+* add `ProcedureCallPacket` to `query` overloads ([352c3bc](https://github.com/blehmbot1/node-mysql2/commit/352c3bc5504d6cb8d9837771a2fa8673db7eb001))
+* add `ProcedureCallPacket` to promise-based `execute` overloads ([8292416](https://github.com/blehmbot1/node-mysql2/commit/829241604cfd4cd45b6f5bfd7c36082287da5ca0))
+* add `ProcedureCallPacket` to promise-based `query` overloads ([0f31a41](https://github.com/blehmbot1/node-mysql2/commit/0f31a41dcfe65d2953447c7f1a8b5c892f2ceed9))
+* add condition which allows code in callback to be reachable ([#2376](https://github.com/blehmbot1/node-mysql2/issues/2376)) ([8d5b903](https://github.com/blehmbot1/node-mysql2/commit/8d5b903f5c24ef6378d4aa98d3fd4e13d39be4db))
+* add decodeuricomponent to parse uri encoded special characters in host, username, password and datbase keys ([#2277](https://github.com/blehmbot1/node-mysql2/issues/2277)) ([fe573ad](https://github.com/blehmbot1/node-mysql2/commit/fe573addffa64a842ae37994fcd8879cefa933f2))
+* binary parser sometimes reads out of packet bounds when results contain null and typecast is false ([#2601](https://github.com/blehmbot1/node-mysql2/issues/2601)) ([705835d](https://github.com/blehmbot1/node-mysql2/commit/705835d06ff437cf0bf3169dac0a5f68002c4f87))
+* **cache:** improve cache key serialization ([#2424](https://github.com/blehmbot1/node-mysql2/issues/2424)) ([0d54b0c](https://github.com/blehmbot1/node-mysql2/commit/0d54b0ca6498c823098426038162ef10df02c818))
+* changing type files to declaration type files ([98e6f3a](https://github.com/blehmbot1/node-mysql2/commit/98e6f3a0b1f2d523dc8cb62c67e49d9589c469eb))
+* **connection config:** remove keepAliveInitialDelay default value ([#2712](https://github.com/blehmbot1/node-mysql2/issues/2712)) ([688ebab](https://github.com/blehmbot1/node-mysql2/commit/688ebab84961ae82863f811fa772cfd26fbadc0e))
+* correctly pass values when used with sql-template-strings library ([#2266](https://github.com/blehmbot1/node-mysql2/issues/2266)) ([6444f99](https://github.com/blehmbot1/node-mysql2/commit/6444f9953ddb08b1b98cd0d7eb0d939d25d3971a))
+* create `ProcedureCallPacket` typings ([09ad1d2](https://github.com/blehmbot1/node-mysql2/commit/09ad1d276fcad6c9e3963d54b56c39c26a57b690))
+* create promise-based `PoolCluster` typings ([7f38496](https://github.com/blehmbot1/node-mysql2/commit/7f38496097fa6d9cfbced604fe0ddc392b1b1979))
+* **docs:** improve the contribution guidelines ([#2552](https://github.com/blehmbot1/node-mysql2/issues/2552)) ([8a818ce](https://github.com/blehmbot1/node-mysql2/commit/8a818ce0f30654eba854759e6409c0ac856fc448))
+* EventEmitter on method signatures to use spread syntax ([#2200](https://github.com/blehmbot1/node-mysql2/issues/2200)) ([5d21b81](https://github.com/blehmbot1/node-mysql2/commit/5d21b8127b8b6aa4b0308b6482d707d150403990))
+* handle prepare response with actual number of parameter definition less than reported in the prepare header. Fixes [#2052](https://github.com/blehmbot1/node-mysql2/issues/2052) ([b658be0](https://github.com/blehmbot1/node-mysql2/commit/b658be0cfbfdec378d71a9d9e70de4a52180cd2d))
+* improvements to allow to use Bun and tls  ([#2119](https://github.com/blehmbot1/node-mysql2/issues/2119)) ([fd44a2a](https://github.com/blehmbot1/node-mysql2/commit/fd44a2ab9c08961a898edcfef5ba0035467a28ce))
+* malformed FieldPacket ([#2280](https://github.com/blehmbot1/node-mysql2/issues/2280)) ([8831e09](https://github.com/blehmbot1/node-mysql2/commit/8831e092024f8d26fe9272adec8e1a5f115735aa))
+* missing `parserCache` in `promise.js` ([7f35cf5](https://github.com/blehmbot1/node-mysql2/commit/7f35cf5f6e69cc8aa3d2008bf5b0434c4d7ee5ac))
+* missing `ResultSetHeader[]` to `query` and `execute` ([f649486](https://github.com/blehmbot1/node-mysql2/commit/f649486fdd0e95ad9f46c002e385986b52224f68))
+* missing constants in `promise.js` ([4ce2c70](https://github.com/blehmbot1/node-mysql2/commit/4ce2c70313ecbe2c4c5fd73f34b4ce7d32a9c83c))
+* missing keys for `Types` constant ([86655ec](https://github.com/blehmbot1/node-mysql2/commit/86655ec6ad8ab8deae11a3c4919ae2ee553f4120))
+* missing typings for `Charsets` constants ([01f77a0](https://github.com/blehmbot1/node-mysql2/commit/01f77a0db471682e7c4f523bde1189fc5d11d43d))
+* missing typings for `CharsetToEncoding` constants ([609229a](https://github.com/blehmbot1/node-mysql2/commit/609229a973031615cb93b5678b5932cf3714480f))
+* missing typings for `parserCache` ([891a523](https://github.com/blehmbot1/node-mysql2/commit/891a523939120666e8d85db634262889657aff45))
+* missing typings for `Types` constant ([04601dd](https://github.com/blehmbot1/node-mysql2/commit/04601ddbd1430b37a7a7ab8d8d63ad27bd00bb54))
+* move missing options to `ConnectionOptions ` ([#2288](https://github.com/blehmbot1/node-mysql2/issues/2288)) ([5cd7639](https://github.com/blehmbot1/node-mysql2/commit/5cd76396d962da070452800597a6f86829b35bd4))
+* remove acquireTimeout invalid option ([#2095](https://github.com/blehmbot1/node-mysql2/issues/2095)) ([eb311db](https://github.com/blehmbot1/node-mysql2/commit/eb311dbb988a4d3adada9774d43a79806a453745))
+* rename file of typings `Charsets` constants ([51c4196](https://github.com/blehmbot1/node-mysql2/commit/51c4196d50472eb18e440ea0291f2b571a3e7585))
+* revert breaking change in results creation ([#2591](https://github.com/blehmbot1/node-mysql2/issues/2591)) ([f7c60d0](https://github.com/blehmbot1/node-mysql2/commit/f7c60d01a49666130f51d3847ccfdd3d6e3d33e9))
+* **security:** improve results object creation ([#2574](https://github.com/blehmbot1/node-mysql2/issues/2574)) ([4a964a3](https://github.com/blehmbot1/node-mysql2/commit/4a964a3910a4b8de008696c554ab1b492e9b4691))
+* **security:** improve supportBigNumbers and bigNumberStrings sanitization ([#2572](https://github.com/blehmbot1/node-mysql2/issues/2572)) ([74abf9e](https://github.com/blehmbot1/node-mysql2/commit/74abf9ef94d76114d9a09415e28b496522a94805))
+* **security:** sanitize fields and tables when using nestTables ([#2702](https://github.com/blehmbot1/node-mysql2/issues/2702)) ([efe3db5](https://github.com/blehmbot1/node-mysql2/commit/efe3db527a2c94a63c2d14045baba8dfefe922bc))
+* **security:** sanitize timezone parameter value to prevent code injection ([#2608](https://github.com/blehmbot1/node-mysql2/issues/2608)) ([7d4b098](https://github.com/blehmbot1/node-mysql2/commit/7d4b098c7e29d5a6cb9eac2633bfcc2f0f1db713))
+* setMaxParserCache throws TypeError ([#2757](https://github.com/blehmbot1/node-mysql2/issues/2757)) ([aa8604a](https://github.com/blehmbot1/node-mysql2/commit/aa8604a32b28c2024da006edce30d88ad22d8a06))
+* sql-template-strings/tag compatibility ([#2238](https://github.com/blehmbot1/node-mysql2/issues/2238)) ([f2efe5a](https://github.com/blehmbot1/node-mysql2/commit/f2efe5a2ddf9e10a83bf24da2af744061b2ae597))
+* **stream:** premature close when it is paused ([#2416](https://github.com/blehmbot1/node-mysql2/issues/2416)) ([7c6bc64](https://github.com/blehmbot1/node-mysql2/commit/7c6bc642addb3e6fee1b1fdc84f83a72ff11ca4a))
+* **stream:** premature close when using `for await` ([#2389](https://github.com/blehmbot1/node-mysql2/issues/2389)) ([af47148](https://github.com/blehmbot1/node-mysql2/commit/af4714845603f70e3c1ef635f6c0750ff1987a9e))
+* **stream:** reads should emit the dataset number for each dataset ([#2628](https://github.com/blehmbot1/node-mysql2/issues/2628)) ([4dab4ca](https://github.com/blehmbot1/node-mysql2/commit/4dab4cad2c3b9b165d6118636a179b5443e50442))
+* support deno + caching_sha2_password FULL_AUTHENTICATION_PACKET flow ([#2704](https://github.com/blehmbot1/node-mysql2/issues/2704)) ([2e03694](https://github.com/blehmbot1/node-mysql2/commit/2e0369445ba1581b427f78689a935ac3debfbf07))
+* The removeIdleTimeoutConnectionsTimer did not clean up when the … ([#2384](https://github.com/blehmbot1/node-mysql2/issues/2384)) ([18a44f6](https://github.com/blehmbot1/node-mysql2/commit/18a44f6a0a0b7ef41cc874d7a7bb2d3db83ea533))
+* **types:** add missing types to TypeCast ([#2390](https://github.com/blehmbot1/node-mysql2/issues/2390)) ([78ce495](https://github.com/blehmbot1/node-mysql2/commit/78ce4953e9c66d6cf40ffc2d252fa3701a2d4fe2))
+* **types:** expose TypeCast types ([#2425](https://github.com/blehmbot1/node-mysql2/issues/2425)) ([336a7f1](https://github.com/blehmbot1/node-mysql2/commit/336a7f1259c63d2dfe070fe400b141e89255844e))
+* **types:** support encoding for string type cast ([#2407](https://github.com/blehmbot1/node-mysql2/issues/2407)) ([1dc2011](https://github.com/blehmbot1/node-mysql2/commit/1dc201144daceab0b12193ada0f13dbb25e917f6))
+* **typings:** typo from `jonServerPublicKey` to `onServerPublicKey` ([#2699](https://github.com/blehmbot1/node-mysql2/issues/2699)) ([8b5f691](https://github.com/blehmbot1/node-mysql2/commit/8b5f6911b69b766a3732fa160049d263460da74b))
+* Update events that are propagated from pool cluster to include remove ([#2114](https://github.com/blehmbot1/node-mysql2/issues/2114)) ([927d209](https://github.com/blehmbot1/node-mysql2/commit/927d20945d664c55209fd95b05b2c68904f51acc))
+
 ## [3.10.1](https://github.com/sidorares/node-mysql2/compare/v3.10.0...v3.10.1) (2024-06-13)
 
 
